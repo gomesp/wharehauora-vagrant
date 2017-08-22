@@ -1,9 +1,12 @@
 # This playbook configures the Wharehauora development server
 ---
-- hosts: all
+- hosts: wharehauora
   remote_user: root
   become: yes
   become_method: sudo
+  vars_files:
+    - vars/rbenv_vars.yml
   
   roles:
-    - centos-config
+    - { role: 'centos-config', tags: 'centos' } 
+    - { role: 'ansible-rbenv-role', tags: 'ruby' } 

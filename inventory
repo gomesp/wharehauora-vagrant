@@ -1,2 +1,2 @@
-[vagrant]
+[wharehauora]
 localhost   ansible_connection=local
